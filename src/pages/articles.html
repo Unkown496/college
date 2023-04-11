@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap w/ Webpack</title>
+</head>
+
+<body data-bs-theme class="vh-100">
+    <div class="d-flex flex-column h-100">
+        <header>
+            <nav class="navbar bg-body-tertiary">
+                <div class="container-fluid p-1 p-lg-3">
+                    <div class="d-flex align-content-center">
+                        <button class="btn btn-link" data-bs-toggle="offcanvas" data-bs-target="#menu"
+                            aria-controls="menu">
+                            <i class="bi bi-list"></i>
+                        </button>
+                        <a class="navbar-brand" href="#">WebDesign</a>
+                    </div>
+                    <div class="d-flex align-content-center" id="navigation">
+                        <ul class="navbar-nav me-auto mb-0 d-flex flex-row gap-2">
+                            <li class="nav-item">
+                                <a class="btn btn-outline-info d-block" aria-current="page"
+                                    href="index.html">Главная</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="btn btn-info d-block" aria-current="page" href="./articles.html">Уроки</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./info.html" class="btn btn-outline-info d-block">Контакты</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-primary" data-theme-changer>
+                        <i class="bi bi-brightness-low" data-theme-change-icon></i>
+                    </button>
+                </div>
+            </nav>
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="menu" aria-labelledby="menu">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasExampleLabel">WebDesign</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div class="container-fluid">
+                        <div class="col-12">
+                            <p class="h5">Навигация</p>
+                            <div class="d-flex flex-column gap-2">
+                                <div>
+                                    <p class="ms-2 mb-0">Статьи</p>
+                                    <ul class="list-group list-group-flush">
+                                        <a 
+                                            class="list-group-item list-group-item-action"
+                                            href="./figma.html"
+                                        >
+                                            Фигма что это такое?
+                                        </a>
+                                        <a 
+                                            class="list-group-item list-group-item-action"
+                                            href="./make.html"
+                                        >
+                                            Как разработать дизайн и код персонального веб-сайта
+                                        </a>
+                                        <a 
+                                            class="list-group-item list-group-item-action"
+                                            href="./ui.html"
+                                        >
+                                            Что такое UX/UI дизайн на самом деле?
+                                        </a>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p class="ms-2 mb-0">Страницы</p>
+                                    <ul class="list-group list-group-flush">
+                                        <a href="./index.html" class="list-group-item list-group-item-action">
+                                            Главная
+                                        </a>
+                                        <a class="list-group-item-info list-group-item list-group-item-action active"
+                                        >
+                                            Уроки
+                                        </a>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="offcanvas-footer p-1">
+                    <p id="user-counter" class="nav-item mb-0"></p>
+                    <p id="time" class="nav-item"></p>
+                </div>
+            </div>
+        </header>
+        <main class="flex-fill my-3 mx-2">
+            <div class="container-fluid">
+                <div class="row">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item" aria-current="page">
+                                <a href="index.html">
+                                    Главная
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                Уроки
+                            </li>
+                        </ol>
+                    </nav>
+                    <div class="col-12 col-lg-4 d-flex">
+                        <div class="card mb-3" style="max-width: 540px;">
+                            <div class="row g-0">
+                                <div class="col-12">
+                                    <div class="card-body">
+                                        <p class="card-title h4">Фигма, что это такое?</p>
+                                        <p class="card-text ps-1">
+                                            Фигма (Figma) - это онлайн-сервис, предназначенный для совместной работы над
+                                            дизайном. Он используется дизайнерами, программистами, продукт-менеджерами и
+                                            многими другими в командах и компаниях. Фигма позволяет создавать и изменять
+                                            дизайн и добавлять функции на лету, а также просматривать его на любом
+                                            устройстве и платформе. Благодаря мощным инструментам и интуитивно понятному
+                                            интерфейсу Figma является
+                                        </p>
+                                        <div class="d-flex justify-content-between">
+                                            <button class="btn btn-success">Бесплатно</button>
+                                            <a 
+                                                class="btn btn-info"
+                                                href="./figma.html"
+                                            >Посмотреть полностью</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="card mb-3" style="max-width: 540px;">
+                            <div class="row g-0">
+                                <div class="col-12">
+                                    <div class="card-body">
+                                        <p class="card-title h4">Как разработать дизайн и код персонального веб-сайта
+                                        </p>
+                                        <p class="card-text ps-1">
+                                            Многие разработчики считают, что быть хорошим дизайнером — это врожденная
+                                            способность, что творческий подход — это то, с чем вы сразу родились. На
+                                            самом деле, дизайн — это навык, который можно освоить, как и любой другой.
+                                            Для создания красивого сайта не обязательно родиться художником, нужно
+                                            только попрактиковаться, хорошо так попрактиковаться.
+                                        </p>
+                                        <div class="d-flex justify-content-between">
+                                            <button class="btn btn-success">Бесплатно</button>
+                                            <a 
+                                                class="btn btn-info"
+                                                href="./make.html"
+                                            >Посмотреть полностью</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="card mb-3" style="max-width: 540px;">
+                            <div class="row g-0">
+                                <div class="col-12">
+                                    <div class="card-body">
+                                        <p class="card-title h4">
+                                            Что такое UX/UI дизайн на самом деле?
+                                        </p>
+                                        <p class="card-text ps-1">
+                                            Очень много недопонимания в среде дизайнеров и
+                                            разработчиков. Также много глупых вопросов, связанных с UX и UI у новичков.
+                                            Часто просто из-за того, что люди не знают сути понятия UX/UI и, не зная о
+                                            чем говорят, называют вещи не своими именами. Я хочу раз и навсегда
+                                            поставить точку и простым понятным языком объяснить, что значит «UX/UI
+                                            дизайн»
+
+                                        </p>
+                                        <div class="d-flex justify-content-between">
+                                            <button class="btn btn-success">Бесплатно</button>
+                                            <a 
+                                                class="btn btn-info"
+                                                href="ui.html"
+                                            >Посмотреть полностью</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </main>
+        <footer>
+            <nav class="navbar bg-body-tertiary align-items-center gap-1">
+                <p class="lead nav-item flex-fill mb-0">Сделано Мазанченко</p>
+            </nav>
+        </footer>
+    </div>
+</body>
+
+</html>
