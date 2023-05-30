@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap w/ Webpack</title>
+</head>
+
+<body data-bs-theme class="vh-100">
+    <div class="d-flex flex-column h-100">
+        <header>
+            <nav class="navbar bg-body-tertiary">
+                <div class="container-fluid p-1 p-lg-3">
+                    <div class="d-flex align-content-center">
+                        <button class="btn btn-link" data-bs-toggle="offcanvas" data-bs-target="#menu"
+                            aria-controls="menu">
+                            <i class="bi bi-list"></i>
+                        </button>
+                        <a class="navbar-brand" href="#">WebDesign</a>
+                    </div>
+                    <div class="d-flex align-content-center" id="navigation">
+                        <ul class="navbar-nav me-auto mb-0 d-flex flex-row gap-2">
+                            <li class="nav-item">
+                                <a class="btn btn-info d-block" aria-current="page" href="index.html">Главная</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="btn btn-outline-info d-block" aria-current="page" href="./articles.html">Уроки</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./info.html" class="btn btn-outline-info d-block">Контакты</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-primary" data-theme-changer>
+                        <i class="bi bi-brightness-low" data-theme-change-icon></i>
+                    </button>
+                </div>
+            </nav>
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="menu" aria-labelledby="menu">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasExampleLabel">WebDesign</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div class="container-fluid">
+                        <div class="col-12">
+                            <p class="h5">Навигация</p>
+                            <div class="d-flex flex-column gap-2">
+                                <div>
+                                    <p class="ms-2 mb-0">Статьи</p>
+                                    <ul class="list-group list-group-flush">
+                                        <a 
+                                            class="list-group-item list-group-item-action"
+                                            href="./figma.html"
+                                        >
+                                            Фигма что это такое?
+                                        </a>
+                                        <a 
+                                            class="list-group-item list-group-item-action"
+                                            href="./make.html"
+                                        >
+                                            Как разработать дизайн и код персонального веб-сайта
+                                        </a>
+                                        <a 
+                                            class="list-group-item list-group-item-action"
+                                            href="./ui.html"
+                                        >
+                                            Что такое UX/UI дизайн на самом деле?
+                                        </a>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p class="ms-2 mb-0">Страницы</p>
+                                    <ul class="list-group list-group-flush">
+                                        <a class="list-group-item-info list-group-item list-group-item-action active">
+                                            Главная
+                                        </a>
+                                        <a class="list-group-item list-group-item-action"
+                                            href="./articles.html"
+                                        >
+                                            Уроки
+                                        </a>
+                                        <a 
+                                            class="list-group-item list-group-item-action"
+                                            href="./info.html"
+                                        >
+                                            Контакты
+                                        </a>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="offcanvas-footer p-1">
+                    <p id="user-counter" class="nav-item mb-0"></p>
+                    <p id="time" class="nav-item"></p>
+                </div>
+            </div>
+        </header>
+        <main class="flex-fill my-3 mx-2">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <figure>
+                            <blockquote class="blockquote">
+                                <p>WebDesign Academy</p>
+                            </blockquote>
+                            <figcaption class="blockquote-footer">
+                                Учитесь создавать потрясающие сайты с помощью WebDesign Academy
+                            </figcaption>
+                        </figure>
+                        <p class="p-2">
+                            Добро пожаловать на страницу книги по веб-дизайну! Здесь вы найдете полезную информацию, которая поможет вам создать 
+                            уникальный и привлекательный дизайн для вашего сайта. Наша книга содержит широкий спектр тем от основ веб-дизайна до 
+                            более сложных вопросов, таких как создание пар блоков и подготовка контента. Наша главная страница будет содержать 
+                            информацию о том, что вы найдете внутри книги, и даст вам представление о том, что вас ждет. 
+                            Не упустите шанс узнать больше о веб-дизайне и создать веб-сайт своей мечты!
+                            <!-- <b>WebDesign Academy</b> - это уникальная платформа для обучения веб-дизайну.
+                            <span class="subtitle">Наша миссия</span> - помочь <b>вам</b> научиться создавать
+                            уникальные,
+                            привлекательные, и полезные веб-сайт. <b>Мы</b> предлагаем большой выбор онлайн-курсов по
+                            <b>веб-дизайну</b>, которые помогут вам создавать потрясающие сайты с нуля. Кроме того, мы
+                            предлагаем
+                            <b>практические задания и постоянную поддержку преподавателей</b>, чтобы помочь вам
+                            применить навыки
+                            веб-дизайна в реальном мире. <br />
+                            Добро пожаловать в <b>WebDesign Academy!</b> -->
+                        </p>
+                        <img width="500px"
+                            src="https://avatars.dzeninfra.ru/get-zen_doc/4079597/pub_609e1f923652e417080e89cc_609e202097f8cf1e77179aed/scale_1200"
+                            class="rounded mx-auto d-block">
+                    </div>
+                </div>
+                <div class="row gx-3 gy-4">
+                    <div class="col-6 d-flex flex-column">
+                        <p class="h5">Mы</p>
+                        <p>
+                            <b>Мы</b> - команда профессиональных веб-дизайнеров с огромным опытом, предлагающая беслатную книгу
+                            по дизайну и делающая ваши веб-сайты более современными.
+                            <b>Наша миссия</b> - помочь вам создать успешные и удобные сайты
+                        </p>
+                        <img 
+                            src="https://cdn.create.vista.com/api/media/small/296540738/stock-photo-cheerful-multicultural-programmers-smiling-camera"
+                            class="flex-fill rounded mx-auto d-block"
+                            width="700px"
+                            height="700px"
+                        />
+                    </div>
+                    <div class="col-6">
+                        <p class="h5">О нашем продукте</p>
+                        <p>
+                            <b>Наша книга по веб-дизайну</b> затрагивают все аспекты создания и проектирования сайтов,
+                            предоставляя практические знания и навыки, необходимые для создания проффесиональных сайтов
+                        </p>
+                        <img src="https://img2.rudalle.ru/images/4a/7b/ea/4a7bea20611b48bca114a3cbf03aa27f_00000.jpg"
+                            width="700px"
+                            height="700px"
+                            class="img-fluid rounded mx-auto d-block" 
+                        />
+                    </div>
+                    <!-- <div class="col-6 d-flex flex-column">
+                        <p class="h5">Кто мы такие</p>
+                        <p>
+                            <b>Мы единственный профессиональный веб-дизайнерский курс</b>
+                            в регионе, который предоставляет настоящие знания и навыки для создания
+                            профессиональных сайтов. Наша команда состоит из опытных и профессиональных веб-дизайнеров,
+                            которые работают для достижения максимальной цели.
+                        </p>
+                        <img 
+                            src="https://www.unicraft.org/wp-content/uploads/2022/11/businesspeople-meeting-office-hand-shake-1568x944.jpg"
+                            class="flex-fill img-fluid rounded mx-auto d-block" 
+                            width="700px"
+                            height="700px"
+                        />
+                    </div> -->
+                    <div class="col-6">
+                        <p class="h5">Что мы предложим</p>
+                        <p>
+                            <b>Мы</b> предлагаем книгу по веб дизайну,
+                            включающие в себя понимание базовых принципов веб-дизайна и построение
+                            красивых и привлекательных сайтов. <b>Вы</b> получите практические знания и навыки,
+                            необходимые для создания высококачественных сайтов, а также различные инструменты
+                            и ресурсы, которые помогут вам реализовать ваши идеи.
+                        </p>
+                        <img src="https://keskil14.ru/wp-content/uploads/2019/12/0bae5994ffcd22bb5c5eae6f96415e96.jpg"
+                            class="img-fluid rounded mx-auto d-block"
+                            width="700px"
+                            height="700px"
+                        />
+                    </div>
+                    <div class="col-6">
+                        <p class="h5">О ценах</p>
+                        <p>
+                            <b>Узнайте</b> как правильно оформлять сайты, как выбирать <b>цветовую гамму и шрифты.</b> 
+                            Мы учим наших читателей создавать 
+                            красивый и удобный дизайн, который привлекает клиентов и увеличивает продажи. <b>Цена - бесплатно.</b> 
+                            Не упустите шанс стать экспертом в веб-дизайне!
+                        </p>
+                        <img 
+                            src="https://aif-s3.aif.ru/images/031/881/fdd668c4bc4af8a40484678a73647bb5.jpg"
+                            class="img-fluid rounded mx-auto d-block"
+                            width="700px"
+                            height="700px"
+                        />
+                    </div>
+                    <div class="col-12">
+                        <p class="h4">Если все понравилось</p>
+                        <p>
+                            Вы хотите освоить навыки веб-дизайна? Наша школа веб-дизайна - предоставляет бесплатную веб книгу для этого.
+                            У нас самые профессиональные и практичные курсы описанные на этой веб-книге
+                            которые будут помогать вам приобрести нужные знания и навыки. Наши учителя
+                            имеют практический опыт в сфере веб-дизайна, поэтому вы можете доверять информации из этой книги. 
+                            Начните создавать и добьетесь успехов!
+                        </p>
+                        <a class="btn btn-success" href="./articles.html">Начать изучать!</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <nav class="navbar bg-body-tertiary align-items-center gap-1 px-1">
+                <p class="lead nav-item flex-fill mb-0">Сделано Мазанченко</p>
+                <p class="lead text-end">WebDesign</p>
+            </nav>
+        </footer>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap w/ Webpack</title>
+</head>
+
+<body data-bs-theme class="vh-100">
+    <div class="d-flex flex-column h-100">
+        <header>
+            <nav class="navbar bg-body-tertiary">
+                <div class="container-fluid p-1 p-lg-3">
+                    <div class="d-flex align-content-center">
+                        <button class="btn btn-link" data-bs-toggle="offcanvas" data-bs-target="#menu"
+                            aria-controls="menu">
+                            <i class="bi bi-list"></i>
+                        </button>
+                        <a class="navbar-brand" href="#">WebDesign</a>
+                    </div>
+                    <div class="d-flex align-content-center" id="navigation">
+                        <ul class="navbar-nav me-auto mb-0 d-flex flex-row gap-2">
+                            <li class="nav-item">
+                                <a class="btn btn-outline-info d-block" aria-current="page"
+                                    href="index.html">Главная</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="btn btn-info d-block" aria-current="page" href="./articles.html">Уроки</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./info.html" class="btn btn-outline-info d-block">Контакты</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-primary" data-theme-changer>
+                        <i class="bi bi-brightness-low" data-theme-change-icon></i>
+                    </button>
+                </div>
+            </nav>
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="menu" aria-labelledby="menu">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasExampleLabel">WebDesign</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div class="container-fluid">
+                        <div class="col-12">
+                            <p class="h5">Навигация</p>
+                            <div class="d-flex flex-column gap-2">
+                                <div>
+                                    <p class="ms-2 mb-0">Статьи</p>
+                                    <ul class="list-group list-group-flush">
+                                        <a class="list-group-item-info list-group-item list-group-item-action active">
+                                            Фигма что это такое?
+                                        </a>
+                                        <a 
+                                            class="list-group-item list-group-item-action"
+                                            href="./make.html"
+                                        >
+                                            Как разработать дизайн и код персонального веб-сайта
+                                        </a>
+                                        <a 
+                                            class="list-group-item list-group-item-action"
+                                            href="./ui.html"
+                                        >
+                                            Что такое UX/UI дизайн на самом деле?
+                                        </a>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p class="ms-2 mb-0">Страницы</p>
+                                    <ul class="list-group list-group-flush">
+                                        <a href="./index.html" class="list-group-item list-group-item-action">
+                                            Главная
+                                        </a>
+                                        <a class="list-group-item-info list-group-item list-group-item-action active"
+                                            href="./articles.html">
+                                            Уроки
+                                        </a>
+                                        <a 
+                                            class="list-group-item list-group-item-action"
+                                            href="./info.html"
+                                        >
+                                            Контакты
+                                        </a>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="offcanvas-footer p-1">
+                    <p id="user-counter" class="nav-item mb-0"></p>
+                    <p id="time" class="nav-item"></p>
+                </div>
+            </div>
+        </header>
+        <main class="flex-fill my-3 mx-2">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item" aria-current="page">
+                                    <a href="index.html">
+                                        Главная
+                                    </a>
+                                </li>
+                                <li class="breadcrumb-item" aria-current="page">
+                                    <a href="./articles.html">
+                                        Уроки
+                                    </a>
+                                </li>
+                                <li class="breadcrumb-item active">
+                                    Фигма что это такое?
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-2">
+                                Навигация по статье
+                                <div id="list-example" class="list-group position-sticky top-0">
+                                    <a class="list-group-item list-group-item-action list-group-item-info"
+                                        href="#list-item-1">
+                                        Введение
+                                    </a>
+                                    <a class="list-group-item list-group-item-action list-group-item-info"
+                                        href="#list-item-2">
+                                        Зачем это нужно?
+                                    </a>
+                                    <a class="list-group-item list-group-item-action list-group-item-info"
+                                        href="#list-item-3">
+                                        Как пользоваться Figma?
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-10">
+                                <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true"
+                                    class="scrollspy-example" tabindex="0">
+                                    <h4 id="list-item-1">Введение</h4>
+                                    <p>
+                                        Фигма (Figma) - это онлайн-сервис, предназначенный для совместной работы над
+                                        дизайном. Он используется дизайнерами, программистами, продукт-менеджерами и
+                                        многими другими в командах и компаниях. Фигма позволяет создавать и изменять
+                                        дизайн и добавлять функции на лету, а также просматривать его на любом
+                                        устройстве и платформе. Благодаря мощным инструментам и интуитивно понятному
+                                        интерфейсу Figma является идеальным выбором для создания и изменения дизайна.
+                                    </p>
+
+
+                                    <h4 id="list-item-2">Зачем это нужно?</h4>
+                                    <p>
+                                        Figma – онлайн-сервис для дизайнеров, веб-разработчиков и маркетологов.
+                                        Он предназначен для создания прототипов сайтов или приложений, иллюстраций и
+                                        векторной графики. В редакторе можно настроить совместную работу, вносить и
+                                        обсуждать правки, причем как в браузере, так и через приложение на компьютере.
+                                    </p>
+                                    <p class="h5">Возможности и особенности Figma</p>
+                                    <p>
+                                        Хотелось бы сначала отметить ключевые моменты, благодаря которым Фигма набрала
+                                        столь огромную популярность.
+                                    </p>
+                                    <ul class="list-unstyled">
+                                        <ul>
+                                            <li>
+                                                Бесплатные функции. Можно свободно пользоваться данным графическим
+                                                редактором, но только с некоторыми ограничениями. В их число входит
+                                                число
+                                                редакторов и проектов, время хранения истории версий и другие важные
+                                                мелочи.
+                                            </li>
+                                            <li>
+                                                Встроенные компоненты. Если вы создаете сразу несколько элементов с
+                                                одинаковым стилем, можно менять их во всем макете. В других графических
+                                                редакторах вам пришлось бы работать с каждым элементом по отдельности.
+                                            </li>
+                                        </ul>
+                                    </ul>
+                                    <p>
+                                        Если тех возможностей, что даются бесплатно, для вас недостаточно, то
+                                        можно купить подписку. Описание тарифов ниже.
+                                    </p>
+                                    <img width="500px"
+                                        src="https://georgytim.ru/wp-content/uploads/2020/07/figma-chto-eto-za-programma-1.jpg"
+                                        class="rounded mx-auto d-block">
+
+                                    <h4 id="list-item-3">Как пользоваться Figma?</h4>
+                                    <p>
+                                        Чтобы начать пользоваться Figma, вам нужно просто зарегистрироваться и создать
+                                        проект. Затем вы можете использовать инструменты для настройки и настройки
+                                        макетов. Есть также широкий выбор готовых шаблонов и иконок. После того, как вы
+                                        закончите свой проект, вы можете предоставить его для просмотра и обсуждения
+                                        другими людьми.
+                                    </p>
+                                    <p class="h5">Регистрация или авторизация</p>
+                                    <p>
+                                        Если вы не зарегистрированы в данном сервисе, сперва нажмите на крайнюю
+                                        кнопку «Sign up», введите электронную почту, придумайте пароль и жмите на кнопку
+                                        «Create account». Можно также войти через сервисы Google.
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <nav class="navbar bg-body-tertiary align-items-center gap-1">
+                <p class="lead nav-item flex-fill mb-0">Сделано Мазанченко</p>
+            </nav>
+        </footer>
+    </div>
+</body>
+
+</html>

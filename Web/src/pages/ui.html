@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap w/ Webpack</title>
+</head>
+
+<body data-bs-theme class="vh-100">
+    <div class="d-flex flex-column h-100">
+        <header>
+            <nav class="navbar bg-body-tertiary">
+                <div class="container-fluid p-1 p-lg-3">
+                    <div class="d-flex align-content-center">
+                        <button class="btn btn-link" data-bs-toggle="offcanvas" data-bs-target="#menu"
+                            aria-controls="menu">
+                            <i class="bi bi-list"></i>
+                        </button>
+                        <a class="navbar-brand" href="#">WebDesign</a>
+                    </div>
+                    <div class="d-flex align-content-center" id="navigation">
+                        <ul class="navbar-nav me-auto mb-0 d-flex flex-row gap-2">
+                            <li class="nav-item">
+                                <a class="btn btn-outline-info d-block" aria-current="page"
+                                    href="index.html">Главная</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="btn btn-info d-block" aria-current="page" href="./articles.html">Уроки</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./info.html" class="btn btn-outline-info d-block">Контакты</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-primary" data-theme-changer>
+                        <i class="bi bi-brightness-low" data-theme-change-icon></i>
+                    </button>
+                </div>
+            </nav>
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="menu" aria-labelledby="menu">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasExampleLabel">WebDesign</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div class="container-fluid">
+                        <div class="col-12">
+                            <p class="h5">Навигация</p>
+                            <div class="d-flex flex-column gap-2">
+                                <div>
+                                    <p class="ms-2 mb-0">Статьи</p>
+                                    <ul class="list-group list-group-flush">
+                                        <a class="list-group-item list-group-item-action" href="./figma.html">
+                                            Фигма что это такое?
+                                        </a>
+                                        <a class="list-group-item list-group-item-action" href="./make.html">
+                                            Как разработать дизайн и код персонального веб-сайта
+                                        </a>
+                                        <a class="list-group-item-info list-group-item list-group-item-action active">
+                                            Что такое UX/UI дизайн на самом деле?
+                                        </a>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p class="ms-2 mb-0">Страницы</p>
+                                    <ul class="list-group list-group-flush">
+                                        <a href="./index.html" class="list-group-item list-group-item-action">
+                                            Главная
+                                        </a>
+                                        <a class="list-group-item-info list-group-item list-group-item-action active"
+                                            href="./articles.html">
+                                            Уроки
+                                        </a>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="offcanvas-footer p-1">
+                    <p id="user-counter" class="nav-item mb-0"></p>
+                    <p id="time" class="nav-item"></p>
+                </div>
+            </div>
+        </header>
+        <main class="flex-fill my-3 mx-2">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item" aria-current="page">
+                                    <a href="index.html">
+                                        Главная
+                                    </a>
+                                </li>
+                                <li class="breadcrumb-item" aria-current="page">
+                                    <a href="./articles.html">
+                                        Уроки
+                                    </a>
+                                </li>
+                                <li class="breadcrumb-item active">
+                                    Как разработать дизайн и код персонального веб-сайта
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-2">
+                                Навигация по статье
+                                <div id="list-example" class="list-group position-sticky top-0">
+                                    <a class="list-group-item list-group-item-action list-group-item-info"
+                                        href="#list-item-1">
+                                        Краткое обьяснение
+                                    </a>
+                                    <a class="list-group-item list-group-item-action list-group-item-info"
+                                        href="#list-item-2">
+                                        Что такое UX/UI, прямым текстом
+                                    </a>
+                                    <a class="list-group-item list-group-item-action list-group-item-info"
+                                        href="#list-item-3">
+                                        Что такое UX и UI дизайн, другими словами
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-10">
+                                <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true"
+                                    class="scrollspy-example" tabindex="0">
+                                    <h4 id="list-item-1">Краткое обьяснение</h4>
+                                    <p>
+                                        UI/UX дизайн - это совокупность инструментов, применяемых для построения
+                                        адаптивных, привлекательных и простых в использовании продуктов. UI отвечает за
+                                        внешний вид продукта, а UX за качество пользовательского опыта. Для построения
+                                        хорошего продукта, разработчики дорабатывают дизайн UI/UX, используя принципы
+                                        простоты, привлекательности и оптимальной навигации. Дизайнеры используют
+                                        различные инструменты для создания эффективного и понятного для пользователя
+                                        интерфейса, включая прототипирование, верстку и анимацию. Таким образом, UI/UX
+                                        дизайн позволяет создавать простые и понятные продукты, привлекательные для
+                                        пользователей.
+                                    </p>
+                                    <p>
+                                        Цель UI/UX дизайнера — довести пользователя до какой-то логической
+                                        точки в интерфейсе. Сделать так, чтобы пользователь достиг своей цели.
+
+                                    </p>
+
+                                    <h4 id="list-item-2">Что такое UX/UI, прямым текстом?</h4>
+                                    <p>
+                                        UX/UI - это сокращение от пользовательского интерфейса и опыта пользователя. UX
+                                        относится к дизайну интерфейса и процессу разработки продукта, а UI - к дизайну
+                                        интерфейса.
+                                    </p>
+                                    <p>
+                                        UX/UI очень важен для успеха продукта, потому что он непосредственно затрагивает
+                                        пользователей. Хороший UX/UI поможет привлечь пользователей, улучшить их
+                                        взаимодействие с продуктом и увеличить вовлеченность пользователей.
+                                    </p>
+                                    <p>
+                                        UI-дизайн отвечает за внешний вид продукта и как пользователи взаимодействуют с
+                                        ним. Он включает в себя разработку графических интерфейсов, интерфейсов
+                                        пользователя и прочих элементов, которые появляются на экране. Он также может
+                                        включать в себя анимацию, иконки и другие дизайнерские элементы.
+
+                                    </p>
+                                    <p>
+                                        Чтобы создать хороший UX/UI, нужно использовать правильный подход. Это включает
+                                        исследовательские работы, прототипирование, тестирование и поддержку
+                                        пользователей. Также нужно использовать соответствующие инструменты, такие как
+                                        Adobe Photoshop, Sketch и Figma.
+                                    </p>
+                                    <p>
+                                        Для оценки пользовательского опыта можно использовать различные методы, такие
+                                        как A / B-тестирование, тестирование пользовательских исследований, интервью и
+                                        анализ данных. Эти техники помогут лучше понять поведение пользователей и
+                                        улучшить пользовательский опыт.
+                                    </p>
+                                    <h4 id="list-item-3">Что такое UX и UI дизайн, другими словами</h4>
+
+                                    <p>
+                                        Прямая обязанность UX/UI дизайнера — это, например, «продать» товар или
+                                        услугу через интерфейс. Именно на основе работы UX/UI дизайнера пользователь
+                                        принимает решение: «Быть или не быть?» Нравится или не нравится. Купить или не
+                                        купить.
+
+                                    </p>
+                                    <p>
+                                        UX/UI дизайн не относится только к смартфонам и веб-сайтам. Более того,
+                                        профессия UX/UI дизайнера существовала с незапамятных времен. Просто раньше она
+                                        так не называлась. Точнее, раньше она вообще никак не называлась, а была частью
+                                        других профессий.
+
+                                    </p>
+                                    <p>
+                                        Вот первый пример: когда Вильгельм Шиккард в 1623 году изобретал
+                                        арифмометр, он уже был UX/UI дизайнером.
+
+                                    </p>
+                                    <p>
+                                        Потому что именно он придумывал, какие тумблеры и в какой
+                                        последовательности должен крутить человек, чтобы получить результат вычислений.
+                                        И он же придумывал, в каком логическом порядке они будут располагаться. Да и
+                                        вообще придумывал, как все эти ручки будут выглядеть. Он создал интерфейс для
+                                        взаимодействия с машиной
+
+                                    </p>
+                                    <p>
+                                        Ещё один более древний и примитивный пример — точильный камень
+                                        (колесо). Уже даже в раннем средневековье было много разновидностей и механизмов
+                                        такого колеса:
+
+                                    </p>
+                                    <ul class="list-unstyled">
+                                        <ul>
+                                            <li>
+                                                его можно было крутить рукояткой вручную
+                                            </li>
+                                            <li>
+                                                колесо мог крутить другой человек
+                                            </li>
+                                            <li>
+                                                или его можно было раскручивать даже без рук, нажимая педаль ногой
+                                            </li>
+                                        </ul>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <nav class="navbar bg-body-tertiary align-items-center gap-1">
+                <p class="lead nav-item flex-fill mb-0">Сделано Мазанченко</p>
+            </nav>
+        </footer>
+    </div>
+</body>
+
+</html>
